@@ -58,7 +58,7 @@ void oznacz_answer(int x) {
 }
 } // namespace
 
-std::string printData(const DATA_TYPE &data) {
+template <> std::string Comm::printData(const DATA_TYPE &data) {
   std::stringstream s;
   for (const auto &x : data) {
     for (const auto &y : x) {
