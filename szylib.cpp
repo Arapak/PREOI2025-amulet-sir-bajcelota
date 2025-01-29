@@ -45,7 +45,7 @@ void readInput() {
 std::vector<std::vector<int>> CallInteractor(std::vector<std::vector<int>> T,
                                              int X, int Y, int casenum) {
   (void)casenum;
-  for (int i = 0; i < X; i++) {
+  for (int i = 0; i < 8; i++) {
     T[X][i] = rand() % 2;
     T[i][Y] = rand() % 2;
   }
@@ -111,7 +111,7 @@ template <> void Comm::runA() {
     std::vector<std::vector<int>> changed_matrix =
         CallInteractor(ciphered_matrix, blocked_row, blocked_column, queryNo);
 
-    userSend(ciphered_matrix);
+    userSend(changed_matrix);
   }
 }
 
