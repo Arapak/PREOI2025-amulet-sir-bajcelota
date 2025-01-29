@@ -2,10 +2,10 @@ CPPFLAGS = -std=c++20 -pedantic -Wall -Wextra -Wformat-security -Wduplicated-con
 
 all: szy.e
 
-szylib-debug.o: szylib.cpp szylib.h communication.h config.h
+szylib-debug.o: szylib.cpp szylib.h communication.h
 	g++ $(CPPFLAGS) -D__NOPASSWORD -D__DEBUG_COMMUNICATION szylib.cpp -c -o szylib-debug.o
 
-szylib-nodebug.o: szylib.cpp szylib.h communication.h config.h
+szylib-nodebug.o: szylib.cpp szylib.h communication.h
 	g++ $(CPPFLAGS) -D__NOPASSWORD szylib.cpp -c -o szylib-nodebug.o
 
 szy.e: szy.cpp szylib-debug.o szylib-nodebug.o
